@@ -18,7 +18,6 @@ def ImGCP(path,nbImages):
     IN :
         - path : chemin du dossier contenant les fichiers de coordonnées (au format txt)
         - nbImages : nombre d'images utilisés dans le traitement       
-        - Ysize : taille de l'image selon l'axe vertical (pixels)
     """
     
     # Sélection des fichiers de coordonnées contenus dans le dossier
@@ -34,7 +33,7 @@ def ImGCP(path,nbImages):
             # Lecture d'un fichier txt
             with open(fichier,"r") as f:
                 pf = [line.split() for line in f]
-#            print(pf)
+
             # Remplissage des balises correspondant au fichier
             image = etree.SubElement(balise,"MesureAppuiFlottant1Im")
             nomImage = etree.SubElement(image,"NameIm")
